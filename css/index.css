@@ -1,0 +1,215 @@
+html,body{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	perspective: 900px;
+}
+.liti {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	left: calc(50% - 150px);
+	top: calc(50% - 50px);
+	transform-style: preserve-3d;
+	transform: rotate3d(1,1,1,25deg);
+	transition: all 5s ease;
+}
+.liti:hover {
+	transform: rotate3d(1,1,1,720deg);
+}
+.boxs {
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.9;
+}
+.front {
+	background-image: url(../img/01.jpg);
+	background-size: 100% 100%;
+	transform: translateZ(150px);
+}
+.black {
+	background-image: url(../img/02.gif);
+	background-size: 100% 100%;
+	transform: translateZ(-150px);
+}
+.left {
+	background-image: url(../img/03.gif);
+	background-size: 100% 100%;
+	transform: rotateY(-90deg) translateZ(150px);
+}
+.right {
+	background-image: url(../img/04.gif);
+	background-size: 100% 100%;
+	transform: rotateY(90deg) translateZ(150px);
+}
+.top {
+	background-image: url(../img/05.gif);
+	background-size: 100% 100%;
+	transform: rotateX(90deg) translateZ(150px);
+}
+.bottom {
+	background-image: url(../img/06.gif);
+	background-size: 100% 100%;
+	transform: rotateX(-90deg) translateZ(150px);
+}
+
+
+/**/
+
+.choose {
+	width: 1000px;
+	height: 80px;
+	text-align: center;
+	margin: 30px auto;
+	line-height: 100px;
+}
+.btn {
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #999;
+	border: 1px solid #999999;
+	border-radius: 10px;
+	text-align: center;
+	margin: 5px;
+}
+.btn:hover {
+	top: 10px;
+	background: black;
+	color: #ffffff;
+}
+
+#front:checked ~ .liti {
+	transform: rotate3d(0,0,0,0deg);
+	transition: all 0.5s ease;
+}
+#front:checked ~.choose [for="front"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+
+#black:checked ~ .liti {
+	transform: rotate3d(0,1,0,180deg);
+	transition: all 0.5s ease;
+}
+#black:checked ~.choose [for="black"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+#left:checked ~ .liti {
+	transform: rotate3d(0,1,0,90deg);
+	transition: all 0.5s ease;
+}
+#left:checked ~.choose [for="left"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+#right:checked ~ .liti {
+	transform: rotate3d(0,1,0,-90deg);
+	transition: all 0.5s ease;
+}
+#right:checked ~.choose [for="right"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+#top:checked ~ .liti {
+	transform: rotate3d(1,0,0,-90deg);
+	transition: all 0.5s ease;
+}
+#top:checked ~.choose [for="top"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+#bottom:checked ~ .liti {
+	transform: rotate3d(1,0,0,90deg);
+	transition: all 0.5s ease;
+}
+#bottom:checked ~.choose [for="bottom"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+#big:checked ~ .liti {
+	transform: translateZ(300px) rotate3d(1,0,0,-90deg);
+	transition: all 0.5s ease;
+}
+#big:checked ~.choose [for="big"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+#small:checked ~ .liti {
+	transform: translateZ(-300px) rotate3d(1,0,0,90deg);
+	transition: all 0.5s ease;
+}
+#small:checked ~.choose [for="small"] {
+	background: black;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(127,127,127,0.99);
+}
+
+/**/
+.txt_box {
+	width: 1000px;
+	text-align: center;
+	margin: auto;
+	color: #999;
+}
+.txt {
+	font-size: 12px;
+	line-height: 24px;
+	display: none;
+	animation: dongHua 2s 1 ease-in-out;
+}
+
+#front:checked ~.txt_box .front-txt {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+#black:checked ~.txt_box .black-txt {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+#left:checked ~.txt_box .left-txt {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+#right:checked ~.txt_box .right-text {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+#top:checked ~.txt_box .top-txt {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+#bottom:checked ~.txt_box .bottom-txt {
+	display: block;
+	animation: dongHua 3s 1 ease-in-out;
+}
+#big:checked ~.txt_box .top-txt {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+#small:checked ~.txt_box .bottom-txt {
+	display: block;
+	animation: dongHua 2s 1 ease-in-out;
+}
+
+@keyframes dongHua {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
